@@ -3,12 +3,23 @@
 Welcome to Classroom Wars: Sino ang Pinakapabibo?! This interactive Python-based game lets you step into the shoes of stereotypical Filipino classroom characters. Choose your role, strategize your moves, and battle it out to be crowned the "Pinakapabibo!"
 
 ## How to Play
-1. Start the Game: Run the `ClassroomWars.py` file in your Python environment.  
-2. Choose Your Character: Pick from 7 distinct classroom archetypes, each with its skillset.  
+### Method 1
+1. Start the Game: Download and run the `ClassroomWars.py` file in your Python environment.  
+2. Choose Your Character: Pick from 6 distinct classroom archetypes, each with its skillset.  
 3. Battle Opponents:  
      a. Use basic attacks or special moves based on your stamina.  
      b. Outlast your opponents by reducing their health to zero.  
 4. Win the Game: Be the last player standing to earn the title of Pinakapabibo! 
+
+### Method 2
+1. Start the Game: Download the folder ClassroomWars
+2. Run the Game: Open game.py in command prompt
+3. Choose Your Character: Pick from 6 distinct classroom archetypes, each with its skillset.  
+4. Battle Opponents:  
+     a. Use basic attacks or special moves based on your stamina.  
+     b. Outlast your opponents by reducing their health to zero.  
+5. Win the Game: Be the last player standing to earn the title of Pinakapabibo! 
+
 
 ## Controls  
 - Input the number corresponding to the action you wish to perform during your turn:
