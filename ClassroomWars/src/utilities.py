@@ -1,4 +1,7 @@
+import random
 from ansi_color import *
+from roles import roles
+from items import items
 
 # Function to handle roles and assign abilities
 def choose_role():
