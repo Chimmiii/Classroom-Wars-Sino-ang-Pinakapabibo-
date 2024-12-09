@@ -3,7 +3,7 @@ from roles import roles
 from items import items
 from utilities import choose_role, display_skills, display_items, display_stats, use_skill, use_item, check_defeat
 from ascii_art import title_art, win
-from ansi_colors import *
+from ansi_color import *
 
 # Main game loop
 def game_loop():
