@@ -1,1 +1,3 @@
-
+General Requirements:
+  1. Python Version: Ensure you have Python 3.x installed on your computer. (Tested on Python 3.8 or newer is recommended.)
+  2. Terminal Compatibility: Your terminal or command prompt should support ANSI escape codes for colorful text output (e.g., Linux/Mac terminals, Windows 10+ with proper settings).
