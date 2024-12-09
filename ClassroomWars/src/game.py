@@ -8,6 +8,10 @@ from ansi_colors import *
 # Main game loop
 def game_loop():
     print(f"{title_art}")
+    
+    # Short Introduction for the User
+    print(f"""\nWelcome to {BOLD}{YELLOW}'Classroom Wars: Sino ang Pinakapabibo?'! 🎓{RESET} Step into the world of a typical Filipino classroom, where 
+    students and teachers battle it out to claim the title of Pinakapabibo. Choose your character, strategize your moves, and let the fun begin! ✨""")
 
     # Player 1 setup
     player1_name = input("Enter Player 1's name: ").strip()
