@@ -1,26 +1,11 @@
 import random
 from src.roles import roles
 from src.items import items
-from src.utilities import display_stats, check_defeat, use_skill, use_item, display_skills, display_items
+from src.utilities import choose_role, display_skills, display_items, display_stats, use_skill, use_item, check_defeat
 from assets.ascii_art import title_art, win
-from assets.ansi_colors import *
+from assets.ansi_colors import RESET, BOLD, RED, GREEN, YELLOW, BLUE, CYAN, PURPLE, GREY
 
-def choose_role():
-    print(f"\n{BOLD}{CYAN}Choose your character:{RESET}")
-    for idx, role in enumerate(roles.keys(), start=1):
-        print(f"{BOLD}{idx}. {role}{RESET} - {roles[role]['description']}")
-    while True:
-        try:
-            choice = int(input(f"\n{BOLD}Enter the number of your choice:{RESET} "))
-            if 1 <= choice <= len(roles):
-                chosen_role = list(roles.keys())[choice - 1]
-                print(f"\n{GREEN}You chose: {chosen_role}{RESET}")
-                return chosen_role
-            else:
-                print(f"{RED}Invalid choice! Please choose a valid number.{RESET}")
-        except ValueError:
-            print(f"{RED}Invalid input! Please enter a number.{RESET}")
-
+# Main game loop
 def game_loop():
     print(f"{title_art}")
 
@@ -59,9 +44,9 @@ def game_loop():
                 item_name = list(items.keys())[item_choice - 1]
                 use_item(player1_name, player1_stats, player2_stats, item_name)
             else:
-                print(f"{RED}Invalid choice! Turn skipped.{RESET}")
+                print(f"{RED}Skill Issue! Turn skipped.{RESET}")
         except (ValueError, IndexError):
-            print(f"{RED}Invalid input! Turn skipped.{RESET}")
+            print(f"{RED}Skill Issue! Turn skipped.{RESET}")
 
         # Check if Player 2 is defeated
         if check_defeat(player2_name, player2_stats):
@@ -71,9 +56,16 @@ def game_loop():
         # Player 2's turn
         print(f"\n{BOLD}{PURPLE}{player2_name}'s Turn!{RESET}")
         if is_computer:
-            skill_name = random.choice(list(roles[player2_role]["skills"].keys()))
-            print(f"{GREY}{player2_name} chooses to use the skill: {skill_name}!{RESET}")
-            use_skill(player2_name, player1_name, player2_stats, player1_stats, skill_name, player2_role)
+            print(f"\n{BOLD}{GREY}{player2_name}'s Turn!{RESET}")
+            if player2_stats["stamina"] > 0:
+                skill_name = random.choice(list(roles[player2_role]["skills"].keys()))
+                print(f"{GREY}{player2_name} chooses to use the skill: {skill_name}!{RESET}")
+                use_skill(player2_name, player1_name, player2_stats, player1_stats, skill_name, player2_role)
+            else:
+                item_name = "Book"
+                print(f"{GREY}{player2_name} uses the item: {item_name}!{RESET}")
+                use_item(player2_name, player2_stats, player1_stats, item_name)
+
         else:
             try:
                 action_choice = int(input(f"{BOLD}Enter 1 to use a skill, 2 to use an item:{RESET} "))
@@ -97,7 +89,6 @@ def game_loop():
             print(f"{YELLOW}{win}{GREEN}{BOLD}{player2_name}!{RESET}")
             break
 
+# Run the game
 if __name__ == "__main__":
-    print(f"""\nWelcome to {BOLD}{YELLOW}'Classroom Wars: Sino ang Pinakapabibo?'! 🎓{RESET} Step into the world of a typical Filipino classroom, where 
-students and teachers battle it out to claim the title of Pinakapabibo. Choose your character, strategize your moves, and let the fun begin! ✨""")
-    game_loop()
+    game_loop()    
