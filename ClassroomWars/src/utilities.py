@@ -1,3 +1,5 @@
+from ansi_color import *
+
 # Function to handle roles and assign abilities
 def choose_role():
     print(f"\n{BOLD}{CYAN}Choose your character:{RESET}")
