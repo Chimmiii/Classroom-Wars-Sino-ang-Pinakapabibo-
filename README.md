@@ -12,7 +12,7 @@ Welcome to Classroom Wars: Sino ang Pinakapabibo?! This interactive Python-based
 4. Win the Game: Be the last player standing to earn the title of Pinakapabibo! 
 
 ### Method 2
-1. Start the Game: Download the folder ClassroomWars
+1. Start the Game: Download the folder 'ClassroomWars'
 2. Run the Game: Open game.py in command prompt
 3. Choose Your Character: Pick from 6 distinct classroom archetypes, each with its skillset.  
 4. Battle Opponents:  
