@@ -11,10 +11,13 @@ Welcome to Classroom Wars: Sino ang Pinakapabibo?! This interactive Python-based
 4. Win the Game: Be the last player standing to earn the title of Pinakapabibo! 
 
 ## Controls  
-- Input the number corresponding to the action you wish to perform during your turn:   
+- Input the number corresponding to the action you wish to perform during your turn:
+- **1**: Choose to skill
   - **1**: Special Skill 1  
   - **2**: Special Skill 2  
-  - **3**: Ultimate  
+  - **3**: Ultimate
+- **2**: Pick an item
+- Inputting anything else skips your turn.
 
 ## Features
 ### Basic Features
@@ -58,7 +61,7 @@ Each character comes with unique skills and play styles, including combinations 
 ## Installation  
 1. Download the game file (`ClassroomWars.py`).  
 2. Ensure Python is installed on your computer.  
-3. Open a terminal or command prompt, navigate to the file location, and type:  
+3. Open a terminal or command prompt, navigate to the file location and type:  
    ```bash
    python ClassroomWars.py
     ```
@@ -66,7 +69,7 @@ Each character comes with unique skills and play styles, including combinations 
 ## License
 This project is licensed under the Apache License 2.0. You may use, modify, and distribute this project in compliance with the license terms.  
 
-For more details, see the full [LICENSE](./LICENSE) file.  
+For more details, please take a look at the full [LICENSE](./LICENSE) file.  
 
 ## Contributors
 - Angelo Joachim Palma
