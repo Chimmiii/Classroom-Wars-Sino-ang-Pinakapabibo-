@@ -1,9 +1,9 @@
 import random
-from src.roles import roles
-from src.items import items
-from src.utilities import choose_role, display_skills, display_items, display_stats, use_skill, use_item, check_defeat
-from assets.ascii_art import title_art, win
-from assets.ansi_colors import RESET, BOLD, RED, GREEN, YELLOW, BLUE, CYAN, PURPLE, GREY
+from roles import roles
+from items import items
+from utilities import choose_role, display_skills, display_items, display_stats, use_skill, use_item, check_defeat
+from ascii_art import title_art, win
+from ansi_colors import RESET, BOLD, RED, GREEN, YELLOW, BLUE, CYAN, PURPLE, GREY
 
 # Main game loop
 def game_loop():
