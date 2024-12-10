@@ -46,10 +46,10 @@ def display_stats(player_name, health, stamina):
     bar_length = 20  # Adjust bar length for clarity
 
     filled_health = int((health / max_health) * bar_length)
-    health_bar = GREEN + "#" * filled_health + RESET + "-" * (bar_length - filled_health)
+    health_bar = GREEN + "■" * filled_health + RESET + "□" * (bar_length - filled_health)
 
     filled_stamina = int((stamina / max_stamina) * bar_length)
-    stamina_bar = BLUE + "#" * filled_stamina + RESET + "-" * (bar_length - filled_stamina)
+    stamina_bar = BLUE + "■" * filled_stamina + RESET + "□" * (bar_length - filled_stamina)
 
     return f"{BOLD}{player_name}{RESET} Health: [{health}] {health_bar}  Stamina: [{stamina}] {stamina_bar}"
 
