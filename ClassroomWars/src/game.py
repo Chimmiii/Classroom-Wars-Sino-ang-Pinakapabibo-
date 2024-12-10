@@ -4,10 +4,12 @@ from items import items
 from utilities import choose_role, display_skills, display_items, display_stats, use_skill, use_item, check_defeat
 from ascii_art import title_art, win
 from ansi_color import *
+from __init__ import GAME_VERSION, GAME_NAME
 
 # Main game loop
 def game_loop():
     print(f"{title_art}")
+    print(f"Welcome to {GAME_NAME} (Version {GAME_VERSION})\n!")
     
     # Short Introduction for the User
     print(f"""\nWelcome to {BOLD}{YELLOW}'Classroom Wars: Sino ang Pinakapabibo?'! 🎓{RESET} Step into the world of a typical Filipino classroom, where 
