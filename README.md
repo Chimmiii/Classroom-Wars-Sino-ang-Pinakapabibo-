@@ -9,16 +9,16 @@ Welcome to Classroom Wars: Sino ang Pinakapabibo?! This interactive Python-based
 3. Battle Opponents:  
      a. Use attacks based on your character's skillset in accordance with your stamina.  
      b. Outlast your opponents by reducing their health to zero.  
-4. Win the Game: Be the last player standing to earn the title of _Pinakapabibo_! 
+4. Win the Game: Be the last player standing to earn the title of _**Pinakapabibo**_! 
 
 ### Method 2
-1. Start the Game: Download the folder 'ClassroomWars'
+1. Start the Game: Download the folder '_ClassroomWars_'
 2. Run the Game: Open `game.py` in command prompt
 3. Choose Your Character: Pick from 6 distinct classroom archetypes, each with its skillset.  
 4. Battle Opponents:  
      a. Use attacks based on your character's skillset in accordance with your stamina 
      b. Outlast your opponents by reducing their health to zero.  
-5. Win the Game: Be the last player standing to earn the title of _Pinakapabibo_! 
+5. Win the Game: Be the last player standing to earn the title of _**Pinakapabibo**_! 
 
 
 ## Controls  
@@ -51,7 +51,7 @@ The basic features of the game include:
     Play against a computer opponent (single-player). Engage in local multiplayer battles with up to two players.
 - ***Winning Criteria***
     
-    The last player standing wins the title Pinakapabibo.
+    The last player standing wins the title _**Pinakapabibo**_.
 
 
 ### Advanced Features
@@ -80,7 +80,7 @@ Each character comes with unique skills and play styles, including combinations 
     ```
 
 ### Method 2
-1. Download the folder 'ClassroomWars'
+1. Download the folder '_ClassroomWars_'
 2. Ensure Pyhton software is installed on your computer.
 3. Open a terminal or command prompt, navigate to the folder and its location and type:
     ```bash
