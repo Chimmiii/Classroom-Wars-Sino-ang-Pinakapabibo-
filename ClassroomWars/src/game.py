@@ -5,7 +5,7 @@ from utilities import choose_role, display_skills, display_items, display_stats,
 from ascii_art import title_art, win
 from ansi_color import *
 from __init__ import GAME_VERSION, GAME_NAME
-from instructions import 
+from instructions import display_instructions
 
 # Main game loop
 def game_loop():
