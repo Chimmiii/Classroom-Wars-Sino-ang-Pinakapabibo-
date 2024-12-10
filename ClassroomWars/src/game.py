@@ -38,8 +38,6 @@ def game_loop():
                 return
             else:
                 print("Invalid choice. Please enter 1, 2, or 3.")
-                print("")
-                print("~*~" * 47)
         except ValueError:
             print("Invalid input! Please enter a number.")
 
