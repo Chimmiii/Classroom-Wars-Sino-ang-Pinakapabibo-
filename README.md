@@ -71,11 +71,20 @@ Each character comes with unique skills and play styles, including combinations 
 - A terminal or command prompt to run Python scripts
 
 ## Installation  
+### Method 1
 1. Download the game file (`ClassroomWars.py`).  
-2. Ensure Python is installed on your computer.  
+2. Ensure Python software is installed on your computer.  
 3. Open a terminal or command prompt, navigate to the file location and type:  
    ```bash
    python ClassroomWars.py
+    ```
+
+### Method 2
+1. Download the folder 'ClassroomWars'
+2. Ensure Pyhton software is installed on your computer.
+3. Open a terminal or command prompt, navigate to the folder and its location and type:
+    ```bash
+   python game.py
     ```
 
 ## License
