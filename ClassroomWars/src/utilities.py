@@ -72,19 +72,25 @@ def use_skill(player_name, opponent_name, player_stats, opponent_stats, skill_na
     player_stats["stamina"] -= stamina_cost
 
     if skill["type"] == "shield":
-        shield_amount = 20  # Define the shield value for "The Clique"
+        shield_amount = 20
         player_stats["shield"] = min(player_stats["shield"] + shield_amount, 100)
         print(f"{player_name} used {skill_name}, gaining a shield of {shield_amount}!")
+    
     elif skill["type"] == "attack":
         damage = random.randint(*skill["damage"]) if isinstance(skill["damage"], tuple) else skill["damage"]
         net_damage = max(0, damage - opponent_stats.get("defense_buff", 0))
-        # Deduct damage from shield first, then health
+        
+        # Apply damage to shield first
         if opponent_stats["shield"] > 0:
             shield_damage = min(net_damage, opponent_stats["shield"])
             opponent_stats["shield"] -= shield_damage
             net_damage -= shield_damage
-        opponent_stats["health"] -= net_damage
-        print(f"{player_name} used {skill_name}, dealing {net_damage} damage to {opponent_name}!")
+            print(f"{opponent_name}'s shield absorbed {shield_damage} damage!")
+        
+        # Apply remaining damage to health
+        if net_damage > 0:
+            opponent_stats["health"] -= net_damage
+            print(f"{opponent_name} took {net_damage} damage!")
 
     elif skill["type"] == "heal":
         heal_amount = skill["heal"]
