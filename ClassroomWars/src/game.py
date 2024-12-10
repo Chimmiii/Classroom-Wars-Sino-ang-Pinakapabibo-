@@ -26,6 +26,8 @@ def game_loop():
         try:
             choice = int(input("Enter your choice: "))
             if choice == 1:
+                print("")
+                print("~*~" * 47)
                 break
             elif choice == 2:
                 display_instructions()
