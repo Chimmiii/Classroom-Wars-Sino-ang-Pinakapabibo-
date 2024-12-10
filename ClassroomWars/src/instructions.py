@@ -1,7 +1,7 @@
 def display_instructions():
-    print("\n" + "=" * 50)
+    print("\n" + "=" * 55)
     print("🎮 Welcome to Classroom Wars: Sino ang Pinakapabibo? 🎓")
-    print("=" * 50 + "\n")
+    print("=" * 55 + "\n")
     
     print("📖 **Game Objective**:")
     print("Reduce your opponent's health to 0 using strategic moves, skills, and items while managing your stamina and shield. \n")
@@ -58,5 +58,5 @@ def display_instructions():
     5. Don't forget to heal or shield when needed!
     """)
 
-    print("=" * 50)
+    print("=" * 55)
     print("Have fun and may the best player win! 🎉\n")
