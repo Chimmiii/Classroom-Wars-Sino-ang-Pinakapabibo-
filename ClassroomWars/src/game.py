@@ -23,18 +23,20 @@ def game_loop():
     print("")
     print("~*~" * 47)
 
-    # Player 2 setup
-    player2_name = input("\nEnter Player 2's name (or 'Computer' for AI): ").strip()
+    player2_name = input("Enter Player 2's name (or 'Computer' for AI): ").strip()
     is_computer = player2_name.lower() == "computer"
-    player2_role = random.choice(list(roles.keys())) if is_computer else choose_role()
-    player2_stats = {"health": 100, "stamina": 100,"shield":0}
-    print("")
-    print("~*~" * 47)
+    player2_stats ={"health": 100, "stamina": 100, "shield": 0}
+    
+    if is_computer:
+        available_roles = [role for role in roles.keys() if role != player1_role]  # Exclude player1's role
+        player2_role = random.choice(available_roles)
+    else:
+        player2_role = choose_role()
+        player2_stats = {"health": 100, "stamina": 100, "shield": 0}
 
     if is_computer:
         print(f"\n{GREY}{player2_name} has chosen the role: {player2_role}!{RESET}")
-        print("")
-        print("~*~" * 47)
+
 
     # Game loop
     while True:
