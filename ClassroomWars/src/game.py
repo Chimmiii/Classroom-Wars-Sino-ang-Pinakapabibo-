@@ -29,11 +29,17 @@ def game_loop():
                 break
             elif choice == 2:
                 display_instructions()
+                print("")
+                print("~*~" * 47)
             elif choice == 3:
                 print("Goodbye! See you next time!")
+                print("")
+                print("~*~" * 47)
                 return
             else:
                 print("Invalid choice. Please enter 1, 2, or 3.")
+                print("")
+                print("~*~" * 47)
         except ValueError:
             print("Invalid input! Please enter a number.")
 
