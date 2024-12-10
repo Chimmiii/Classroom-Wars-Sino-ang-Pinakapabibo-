@@ -9,7 +9,7 @@ Welcome to Classroom Wars: Sino ang Pinakapabibo?! This interactive Python-based
 3. Battle Opponents:  
      a. Use attacks based on your character's skillset in accordance with your stamina.  
      b. Outlast your opponents by reducing their health to zero.  
-4. Win the Game: Be the last player standing to earn the title of Pinakapabibo! 
+4. Win the Game: Be the last player standing to earn the title of _Pinakapabibo_! 
 
 ### Method 2
 1. Start the Game: Download the folder 'ClassroomWars'
@@ -18,7 +18,7 @@ Welcome to Classroom Wars: Sino ang Pinakapabibo?! This interactive Python-based
 4. Battle Opponents:  
      a. Use attacks based on your character's skillset in accordance with your stamina 
      b. Outlast your opponents by reducing their health to zero.  
-5. Win the Game: Be the last player standing to earn the title of Pinakapabibo! 
+5. Win the Game: Be the last player standing to earn the title of _Pinakapabibo_! 
 
 
 ## Controls  
