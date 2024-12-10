@@ -13,7 +13,7 @@ Welcome to Classroom Wars: Sino ang Pinakapabibo?! This interactive Python-based
 
 ### Method 2
 1. Start the Game: Download the folder 'ClassroomWars'
-2. Run the Game: Open game.py in command prompt
+2. Run the Game: Open `game.py` in command prompt
 3. Choose Your Character: Pick from 6 distinct classroom archetypes, each with its skillset.  
 4. Battle Opponents:  
      a. Use basic attacks or special moves based on your stamina.  
