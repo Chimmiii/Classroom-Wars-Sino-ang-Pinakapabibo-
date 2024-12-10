@@ -5,6 +5,7 @@ from utilities import choose_role, display_skills, display_items, display_stats,
 from ascii_art import title_art, win
 from ansi_color import *
 from __init__ import GAME_VERSION, GAME_NAME
+from instructions import 
 
 # Main game loop
 def game_loop():
@@ -15,6 +16,26 @@ def game_loop():
     print(f"""\nWelcome to {BOLD}{YELLOW}'Classroom Wars: Sino ang Pinakapabibo?'! 🎓{RESET} Step into the world of a typical Filipino classroom, where 
     students and teachers battle it out to claim the title of Pinakapabibo. Choose your character, strategize your moves, and let the fun begin! ✨\n""")
     print("~*~" * 47) 
+
+    while True:
+        # Option to view instructions at the beginning
+        print("\nOptions:")
+        print("1. Start a new game")
+        print("2. View instructions")
+        print("3. Exit")
+        try:
+            choice = int(input("Enter your choice: "))
+            if choice == 1:
+                break
+            elif choice == 2:
+                display_instructions()
+            elif choice == 3:
+                print("Goodbye! See you next time!")
+                return
+            else:
+                print("Invalid choice. Please enter 1, 2, or 3.")
+        except ValueError:
+            print("Invalid input! Please enter a number.")
 
     # Player 1 setup
     player1_name = input("\nEnter Player 1's name: ").strip()
