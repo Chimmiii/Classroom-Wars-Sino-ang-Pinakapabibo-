@@ -51,12 +51,12 @@ def display_stats(player_name, health, stamina, shield):
     filled_shield = int((combined_health / max_health) * bar_length) - filled_health
 
     # Construct health bar
-    health_bar = GREEN + "#" * filled_health + YELLOW + "#" * filled_shield + RESET
-    health_bar += "-" * (bar_length - (filled_health + filled_shield))
+    health_bar = GREEN + "◼" * filled_health + GREY + "◼" * filled_shield + RESET
+    health_bar += "◻" * (bar_length - (filled_health + filled_shield))
 
     # Construct stamina bar
     filled_stamina = int((stamina / max_stamina) * bar_length)
-    stamina_bar = BLUE + "#" * filled_stamina + RESET + "-" * (bar_length - filled_stamina)
+    stamina_bar = BLUE + "◼" * filled_stamina + RESET + "◻" * (bar_length - filled_stamina)
 
     return f"{BOLD}{player_name}{RESET} Health: [{health}] {health_bar}  Stamina: [{stamina}] {stamina_bar}"
 
