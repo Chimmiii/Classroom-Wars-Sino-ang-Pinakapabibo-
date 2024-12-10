@@ -19,7 +19,7 @@ def game_loop():
     # Player 1 setup
     player1_name = input("\nEnter Player 1's name: ").strip()
     player1_role = choose_role()
-    player1_stats = {"health": 100, "stamina": 100}
+    player1_stats = {"health": 100, "stamina": 100,"shield":0}
     print("")
     print("~*~" * 47)
 
@@ -27,7 +27,7 @@ def game_loop():
     player2_name = input("\nEnter Player 2's name (or 'Computer' for AI): ").strip()
     is_computer = player2_name.lower() == "computer"
     player2_role = random.choice(list(roles.keys())) if is_computer else choose_role()
-    player2_stats = {"health": 100, "stamina": 100}
+    player2_stats = {"health": 100, "stamina": 100,"shield":0}
     print("")
     print("~*~" * 47)
 
@@ -39,8 +39,8 @@ def game_loop():
     # Game loop
     while True:
         # Display stats
-        print("\n" + display_stats(player1_name, player1_stats["health"], player1_stats["stamina"]))
-        print(display_stats(player2_name, player2_stats["health"], player2_stats["stamina"]))
+        print("\n" + display_stats(player1_name, player1_stats["health"], player1_stats["stamina"],player1_stats["shield"]))
+        print(display_stats(player2_name, player2_stats["health"], player2_stats["stamina"],player2_stats["shield"]))
 
         # Player 1's turn
         print(f"\n{BOLD}{CYAN}{player1_name}'s Turn!{RESET}")
