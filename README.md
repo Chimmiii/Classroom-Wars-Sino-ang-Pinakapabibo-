@@ -73,8 +73,9 @@ Each character comes with unique skills and play styles, including combinations 
 ## Installation  
 ### Method 1
 1. Download the ZIP file on the git repository.
-2. Ensure Python software is installed on your computer.  
-3. Open a terminal or command prompt, navigate to the file location and type:  
+2. Ensure Python software is installed on your computer.
+3. Copy and paste the python file `ClassroomWars.py` to your desired location.
+4. Open a terminal or command prompt, navigate to the file location and type:  
    ```bash
    python ClassroomWars.py
     ```
@@ -82,7 +83,8 @@ Each character comes with unique skills and play styles, including combinations 
 ### Method 2
 1. Download the ZIP file on the git repository.
 2. Ensure Pyhton software is installed on your computer.
-3. Open a terminal or command prompt, navigate to the folder and its location and type:
+3. Copy and paste the folder `ClassroomWars` to your desired location.
+4. Open a terminal or command prompt, navigate to the folder and its location and type:
     ```bash
    python game.py
     ```
