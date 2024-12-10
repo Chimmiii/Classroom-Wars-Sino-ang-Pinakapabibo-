@@ -39,17 +39,24 @@ def display_items():
         desc = item_info["description"]
         print(f"{idx}. {item_name} - {desc}")
 
-# Display health and stamina with a bar
-def display_stats(player_name, health, stamina):
+# Display health and stamina with a bar #Changes-hipos
+def display_stats(player_name, health, stamina, shield):
     max_health = 100
     max_stamina = 100
     bar_length = 20  # Adjust bar length for clarity
 
+    # Calculate health and shield proportions
+    combined_health = min(health + shield, max_health)
     filled_health = int((health / max_health) * bar_length)
-    health_bar = GREEN + "■" * filled_health + RESET + "□" * (bar_length - filled_health)
+    filled_shield = int((combined_health / max_health) * bar_length) - filled_health
 
+    # Construct health bar
+    health_bar = GREEN + "#" * filled_health + YELLOW + "#" * filled_shield + RESET
+    health_bar += "-" * (bar_length - (filled_health + filled_shield))
+
+    # Construct stamina bar
     filled_stamina = int((stamina / max_stamina) * bar_length)
-    stamina_bar = BLUE + "■" * filled_stamina + RESET + "□" * (bar_length - filled_stamina)
+    stamina_bar = BLUE + "#" * filled_stamina + RESET + "-" * (bar_length - filled_stamina)
 
     return f"{BOLD}{player_name}{RESET} Health: [{health}] {health_bar}  Stamina: [{stamina}] {stamina_bar}"
 
@@ -64,9 +71,18 @@ def use_skill(player_name, opponent_name, player_stats, opponent_stats, skill_na
 
     player_stats["stamina"] -= stamina_cost
 
-    if skill["type"] == "attack":
+    if skill["type"] == "shield":
+        shield_amount = 20  # Define the shield value for "The Clique"
+        player_stats["shield"] = min(player_stats["shield"] + shield_amount, 100)
+        print(f"{player_name} used {skill_name}, gaining a shield of {shield_amount}!")
+    elif skill["type"] == "attack":
         damage = random.randint(*skill["damage"]) if isinstance(skill["damage"], tuple) else skill["damage"]
         net_damage = max(0, damage - opponent_stats.get("defense_buff", 0))
+        # Deduct damage from shield first, then health
+        if opponent_stats["shield"] > 0:
+            shield_damage = min(net_damage, opponent_stats["shield"])
+            opponent_stats["shield"] -= shield_damage
+            net_damage -= shield_damage
         opponent_stats["health"] -= net_damage
         print(f"{player_name} used {skill_name}, dealing {net_damage} damage to {opponent_name}!")
 
