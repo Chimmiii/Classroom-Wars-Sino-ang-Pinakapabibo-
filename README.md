@@ -68,6 +68,7 @@ Each character comes with unique skills and play styles, including combinations 
 4. Open a terminal or command prompt, navigate to the folder and its location and type:
     ```bash
    python game.py
+    py game.py
     ```
 
 ## License
