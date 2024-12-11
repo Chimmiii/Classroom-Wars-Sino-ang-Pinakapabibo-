@@ -80,9 +80,13 @@ For more details, please take a look at the full [LICENSE](./LICENSE) file.
 
 ## Acknowledgment
 In partial fulfillment for the requirement of Computer Programming 1.
+
 Submitted to RB Jann Jamindang - Instructor V
+
 College of Arts and Sciences
+
 Division of Physical Sciences and Mathematics
+
 University of the Philippines Visayas - Miagao Campus 
 
 ## Contributors
