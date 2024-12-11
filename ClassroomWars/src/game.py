@@ -1,3 +1,4 @@
+import os
 import random
 from roles import roles
 from items import items
