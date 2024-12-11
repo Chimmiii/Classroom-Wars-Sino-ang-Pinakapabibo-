@@ -67,8 +67,7 @@ Each character comes with unique skills and play styles, including combinations 
 3. Copy and paste the folder `ClassroomWars` to your desired location.
 4. Open a terminal or command prompt, navigate to the folder and its location and type:
     ```bash
-   python game.py
-    py game.py
+   python game.py or py game.py
     ```
 
 ## License
