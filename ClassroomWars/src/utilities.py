@@ -131,3 +131,6 @@ def check_defeat(player_name, player_stats):
     elif player_stats["health"] < 20:
         print(f"\n{YELLOW}{player_name}{RESET} is on the verge of collapse with critical health!")
     return False
+    
+def clear_terminal():
+    os.system('cls' if os.name == 'nt' else 'clear')
