@@ -50,17 +50,15 @@ def game_loop():
     print("")
     print("~*~" * 47)
 
-    # Player 2 setup
-    player2_name = input("Enter Player 2's name (or 'Computer' for AI): ").strip()
+   player2_name = input("Enter Player 2's name (or 'Computer' for AI): ").strip()
     is_computer = player2_name.lower() == "computer"
-    player2_stats ={"health": 100, "stamina": 100, "shield": 0}
-    
+    player2_stats = {"health": 100, "stamina": 100, "shield": 0}
+
     if is_computer:
         available_roles = [role for role in roles.keys() if role != player1_role]  # Exclude player1's role
         player2_role = random.choice(available_roles)
     else:
         player2_role = choose_role()
-        player2_stats = {"health": 100, "stamina": 100, "shield": 0}
 
     if is_computer:
         print(f"\n{GREY}{player2_name} has chosen the role: {player2_role}!{RESET}")
@@ -69,6 +67,7 @@ def game_loop():
     print(f"\n{CYAN}Random selection: {BOLD}{player1_name if current_player == 1 else player2_name} starts the game!{RESET}")
 
     previous_action = None
+
     # Game loop
     while True:
         clear_terminal()
@@ -80,103 +79,65 @@ def game_loop():
             print("\n")
 
         # Display stats
-        print("\n" + display_stats(player1_name, player1_stats["health"], player1_stats["stamina"],player1_stats["shield"]))
-        print(display_stats(player2_name, player2_stats["health"], player2_stats["stamina"],player2_stats["shield"]))
+        print("\n" + display_stats(player1_name, player1_stats["health"], player1_stats["stamina"], player1_stats["shield"]))
+        print(display_stats(player2_name, player2_stats["health"], player2_stats["stamina"], player2_stats["shield"]))
 
         # Player 1's turn
         print(f"\n{BOLD}{CYAN}{player1_name}'s Turn!{RESET}")
         try:
-            action_choice = int(input(f"{BOLD}Enter 1 to use a skill, 2 to use an item, 3 to surrender:{RESET} "))
+            action_choice = int(input(f"{BOLD}Enter 1 to use a skill, 2 to use an item:{RESET} "))
             if action_choice == 1:
                 display_skills(player1_role)
                 skill_choice = int(input(f"{BOLD}Enter the number of the skill to use:{RESET} "))
                 skill_name = list(roles[player1_role]["skills"].keys())[skill_choice - 1]
                 use_skill(player1_name, player2_name, player1_stats, player2_stats, skill_name, player1_role)
-                print("")
-                print("~*~" * 47)
             elif action_choice == 2:
                 display_items()
                 item_choice = int(input(f"{BOLD}Enter the number of the item to use:{RESET} "))
                 item_name = list(items.keys())[item_choice - 1]
                 use_item(player1_name, player1_stats, player2_stats, item_name)
-                print("")
-                print("~*~" * 47)
-            elif action_choice == 3:
-                print("")
-                print("~*~" * 47)
-                print(f"\n{RED}{player1_name} has surrendered!{RESET}\n")
-                print(f"{YELLOW}{win}{BOLD}{player2_name}!{RESET}")
-                break
             else:
                 print(f"{RED}Skill Issue! Turn skipped.{RESET}")
-                print("")
-                print("~*~" * 47)
         except (ValueError, IndexError):
             print(f"{RED}Skill Issue! Turn skipped.{RESET}")
-            print("")
-            print("~*~" * 47)
 
         # Check if Player 2 is defeated
         if check_defeat(player2_name, player2_stats):
-            print("")
-            print("~*~" * 47)
-            print(f"{YELLOW}{win}{BOLD}{player1_name}!{RESET}")
+            print(f"{YELLOW}{win}{GREEN}{BOLD}{player1_name}!{RESET}")
             break
 
         # Player 2's turn
         print(f"\n{BOLD}{PURPLE}{player2_name}'s Turn!{RESET}")
         if is_computer:
-            print(f"\n{BOLD}{GREY}{player2_name}'s Turn!{RESET}")
             if player2_stats["stamina"] > 0:
                 skill_name = random.choice(list(roles[player2_role]["skills"].keys()))
                 print(f"{GREY}{player2_name} chooses to use the skill: {skill_name}!{RESET}")
                 use_skill(player2_name, player1_name, player2_stats, player1_stats, skill_name, player2_role)
-                print("")
-                print("~*~" * 47)
             else:
                 item_name = "Book"
                 print(f"{GREY}{player2_name} uses the item: {item_name}!{RESET}")
                 use_item(player2_name, player2_stats, player1_stats, item_name)
-                print("")
-                print("~*~" * 47)
-
         else:
             try:
-                action_choice = int(input(f"{BOLD}Enter 1 to use a skill, 2 to use an item, 3 to surrender:{RESET} "))
+                action_choice = int(input(f"{BOLD}Enter 1 to use a skill, 2 to use an item:{RESET} "))
                 if action_choice == 1:
                     display_skills(player2_role)
                     skill_choice = int(input(f"{BOLD}Enter the number of the skill to use:{RESET} "))
                     skill_name = list(roles[player2_role]["skills"].keys())[skill_choice - 1]
                     use_skill(player2_name, player1_name, player2_stats, player1_stats, skill_name, player2_role)
-                    print("")
-                    print("~*~" * 47)
                 elif action_choice == 2:
                     display_items()
                     item_choice = int(input(f"{BOLD}Enter the number of the item to use:{RESET} "))
                     item_name = list(items.keys())[item_choice - 1]
                     use_item(player2_name, player2_stats, player1_stats, item_name)
-                    print("")
-                    print("~*~" * 47)
-                elif action_choice == 3:
-                    print("")
-                    print("~*~" * 47)
-                    print(f"\n{RED}{player2_name} has surrendered!{RESET}\n")
-                    print(f"{YELLOW}{win}{BOLD}{player1_name}!{RESET}")
-                    break
                 else:
                     print(f"{RED}Invalid choice! Turn skipped.{RESET}")
-                    print("")
-                    print("~*~" * 47)
             except (ValueError, IndexError):
                 print(f"{RED}Invalid input! Turn skipped.{RESET}")
-                print("")
-                print("~*~" * 47)
 
         # Check if Player 1 is defeated
         if check_defeat(player1_name, player1_stats):
-            print("")
-            print("~*~" * 47)
-            print(f"{YELLOW}{win}{BOLD}{player2_name}!{RESET}")
+            print(f"{YELLOW}{win}{GREEN}{BOLD}{player2_name}!{RESET}")
             break
 
 # Run the game
