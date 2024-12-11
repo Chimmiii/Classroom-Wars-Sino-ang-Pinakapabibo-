@@ -35,7 +35,7 @@ roles = {
     "Varsity Student": {
         "description": "A powerhouse with moves that balance agility, strength, and endurance, excelling in offensive strikes and self-preservation techniques.\n",
         "skills": {
-            "Varsity Walk": {"type": "dodge", "damage": 10, "stamina_cost": 25, "description": "Dodges the opponent's attack gracefully."},
+            "Varsity Walk": {"type": "attack", "damage": (10, 15), "stamina_cost": 25, "description": "Dodges the opponent's attack gracefully."},
             "Kaya ko to!": {"type": "heal", "damage": 0, "heal": 30, "stamina_cost": 20, "description": "Boosts morale and heals health."},
             "Champion's Glory": {"type": "ultimate", "damage": 40, "shield": 20, "stamina_cost": 50, "description": "Deals massive damage and gains a shield."},
         },
