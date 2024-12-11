@@ -51,7 +51,7 @@ def game_loop():
     print("")
     print("~*~" * 47)
 
-   player2_name = input("Enter Player 2's name (or 'Computer' for AI): ").strip()
+    player2_name = input("Enter Player 2's name (or 'Computer' for AI): ").strip()
     is_computer = player2_name.lower() == "computer"
     player2_stats = {"health": 100, "stamina": 100, "shield": 0}
 
