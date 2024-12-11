@@ -71,7 +71,7 @@ def game_loop():
     previous_action = None
     # Game loop
     while True:
-         clear_terminal()
+        clear_terminal()
 
         # Display previous round's action
         if previous_action:
