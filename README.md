@@ -78,6 +78,13 @@ This project is licensed under the Apache License 2.0. You may use, modify, and 
 
 For more details, please take a look at the full [LICENSE](./LICENSE) file.  
 
+## Acknowledgment
+In partial fulfillment for the requirement of Computer Programming 1.
+Submitted to RB Jann Jamindang - Instructor V
+College of Arts and Sciences
+Division of Physical Sciences and Mathematics
+University of the Philippines Visayas - Miagao Campus 
+
 ## Contributors
 - Angelo Joachim Palma
 - Earnest Espino
@@ -93,4 +100,5 @@ For inquiries, feedback, or collaboration, feel free to reach out to us:
 - ***esespino@up.edu.ph***  
 - ***gjgarde@up.edu.ph***  
 - ***alendoma@up.edu.ph***  
-- ***jcalaysa@up.edu.ph*** 
+- ***jcalaysa@up.edu.ph***
+
