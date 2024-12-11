@@ -65,9 +65,20 @@ def game_loop():
     if is_computer:
         print(f"\n{GREY}{player2_name} has chosen the role: {player2_role}!{RESET}")
 
+    current_player = random.choice([1, 2])
+    print(f"\n{CYAN}Random selection: {BOLD}{player1_name if current_player == 1 else player2_name} starts the game!{RESET}")
 
+    previous_action = None
     # Game loop
     while True:
+         clear_terminal()
+
+        # Display previous round's action
+        if previous_action:
+            print(f"{BOLD}{YELLOW}Last Turn's Action:{RESET}")
+            print(previous_action)
+            print("\n")
+
         # Display stats
         print("\n" + display_stats(player1_name, player1_stats["health"], player1_stats["stamina"],player1_stats["shield"]))
         print(display_stats(player2_name, player2_stats["health"], player2_stats["stamina"],player2_stats["shield"]))
